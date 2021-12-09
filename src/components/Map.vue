@@ -1,5 +1,5 @@
 <template>
-    <div id="map">
+    <div id="map" :style="{ height: height }">
     </div>
 </template>
 <script>
@@ -23,7 +23,7 @@
 
     methods: {
         async fetchData (fips) {
-            const res = await axios.get(`http://localhost:8080/county/${fips}`)
+            const res = await axios.get(`https://warm-cliffs-95292.herokuapp.com/county/${fips}`)
             this.$root.$emit('fetching', res.data)
         },
 
@@ -76,13 +76,22 @@
             }
         ).addTo(this.map)
         // this.jsonLayerGroup.addLayer(this.jsonLayer)
+    },
+
+    computed: {
+      height () {
+        switch (this.$vuetify.breakpoint.name) {
+          case 'xs': return '200px'
+          case 'sm': return '300px'
+          case 'md': return '400px'
+          case 'lg': return '500px'
+          case 'xl': return '600px'
+          default: return '400px'
+        }
+      },
     }
   }
 </script>
 <style lang="css" scoped>
 @import "~leaflet/dist/leaflet.css";
-#map {
-    height: 600px;
-    width: 100%;
-}
 </style>

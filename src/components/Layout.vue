@@ -1,5 +1,5 @@
 <template>
-  <v-container fill-height fluid>
+  <v-container fluid>
     <v-row
       align="center"
       justify="center"
@@ -10,7 +10,7 @@
         </v-card>
       </v-col>
       <v-col cols=2>
-        <v-card outlined height="600px">
+        <v-card outlined :height="height">
           <v-card-title>County Metadata</v-card-title>
           <SideCard/>
         </v-card>
@@ -18,13 +18,13 @@
     </v-row>
     <v-row>
     <v-col>
-      <v-card outlined height="450px">
-        <v-card-title>Labor Force Data Table</v-card-title>
+      <v-card outlined :height="bottomHeight">
+        <v-card-title>Labor Force, Employed, Unemployed</v-card-title>
         <DataTable/>
       </v-card>
     </v-col>
     <v-col>
-      <v-card outlined height="450px">
+      <v-card outlined :height="bottomHeight">
         <v-card-title>Unemployment Rate Trend</v-card-title>
         <SparkLine/>
       </v-card>
@@ -51,5 +51,28 @@
     data: () => ({
 
     }),
+
+    computed: {
+      height () {
+        switch (this.$vuetify.breakpoint.name) {
+          case 'xs': return '200px'
+          case 'sm': return '300px'
+          case 'md': return '400px'
+          case 'lg': return '500px'
+          case 'xl': return '600px'
+          default: return '400px'
+        }
+      },
+      bottomHeight () {
+          switch (this.$vuetify.breakpoint.name) {
+            case 'xs': return '100px'
+            case 'sm': return '200px'
+            case 'md': return '300px'
+            case 'lg': return '400px'
+            case 'xl': return '500px'
+            default: return '300px'
+        }
+      }
+    }
   }
 </script>
