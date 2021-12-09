@@ -24,7 +24,7 @@
       </v-card>
     </v-col>
     <v-col>
-      <v-card outlined :height="bottomHeight">
+      <v-card outlined :height="sparkHeight">
         <v-card-title>Unemployment Rate Trend</v-card-title>
         <SparkLine/>
       </v-card>
@@ -71,6 +71,16 @@
             case 'lg': return '450px'
             case 'xl': return '550px'
             default: return '450px'
+        }
+      },
+      sparkHeight () {
+          switch (this.$vuetify.breakpoint.name) {
+            case 'xs': return '250px'
+            case 'sm': return '250px'
+            case 'md': return '250px'
+            case 'lg': return '350px'
+            case 'xl': return '450px'
+            default: return '350px'
         }
       }
     }
