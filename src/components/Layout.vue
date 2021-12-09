@@ -55,22 +55,22 @@
     computed: {
       height () {
         switch (this.$vuetify.breakpoint.name) {
-          case 'xs': return '200px'
-          case 'sm': return '300px'
-          case 'md': return '400px'
-          case 'lg': return '500px'
-          case 'xl': return '600px'
+          case 'xs': return '2250px'
+          case 'sm': return '350px'
+          case 'md': return '300px'
+          case 'lg': return '400px'
+          case 'xl': return '500px'
           default: return '400px'
         }
       },
       bottomHeight () {
           switch (this.$vuetify.breakpoint.name) {
-            case 'xs': return '100px'
-            case 'sm': return '200px'
-            case 'md': return '300px'
-            case 'lg': return '400px'
-            case 'xl': return '500px'
-            default: return '300px'
+            case 'xs': return '150px'
+            case 'sm': return '250px'
+            case 'md': return '350px'
+            case 'lg': return '450px'
+            case 'xl': return '550px'
+            default: return '450px'
         }
       }
     }

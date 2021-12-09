@@ -81,11 +81,11 @@
     computed: {
       height () {
         switch (this.$vuetify.breakpoint.name) {
-          case 'xs': return '200px'
-          case 'sm': return '300px'
-          case 'md': return '400px'
-          case 'lg': return '500px'
-          case 'xl': return '600px'
+          case 'xs': return '2250px'
+          case 'sm': return '350px'
+          case 'md': return '300px'
+          case 'lg': return '400px'
+          case 'xl': return '500px'
           default: return '400px'
         }
       },
