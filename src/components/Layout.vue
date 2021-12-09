@@ -4,12 +4,12 @@
       align="center"
       justify="center"
     >
-      <v-col cols=10>
+      <v-col cols=9>
         <v-card outlined>
           <Map/>
         </v-card>
       </v-col>
-      <v-col cols=2>
+      <v-col cols=3>
         <v-card outlined :height="height">
           <v-card-title>County Metadata</v-card-title>
           <SideCard/>
@@ -55,7 +55,7 @@
     computed: {
       height () {
         switch (this.$vuetify.breakpoint.name) {
-          case 'xs': return '2250px'
+          case 'xs': return '250px'
           case 'sm': return '350px'
           case 'md': return '300px'
           case 'lg': return '400px'
@@ -65,9 +65,9 @@
       },
       bottomHeight () {
           switch (this.$vuetify.breakpoint.name) {
-            case 'xs': return '150px'
-            case 'sm': return '250px'
-            case 'md': return '350px'
+            case 'xs': return '450px'
+            case 'sm': return '450px'
+            case 'md': return '450px'
             case 'lg': return '450px'
             case 'xl': return '550px'
             default: return '450px'
